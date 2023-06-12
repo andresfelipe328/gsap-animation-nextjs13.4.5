@@ -20,10 +20,11 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
           x: -10,
         },
         {
+          duration: 2,
           opacity: 1,
           x: 0,
           stagger: 0.2,
-          ease: "elastic.out(1, 0.75)",
+          ease: "elastic.out(2, 0.5)",
         }
       );
 
