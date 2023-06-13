@@ -10,8 +10,10 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
       // gsap.from(root.current!.childNodes, {
       //   opacity: 0,
       //   x: -10,
+      //   delay: 0.5,
+      //   duration: 2,
       //   stagger: 0.2,
-      //   ease: "elastic.out(1, 0.75)",
+      //   ease: "elastic.out(2, 0.5)",
       // });
       gsap.fromTo(
         root.current!.childNodes,
@@ -20,6 +22,7 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
           x: -10,
         },
         {
+          delay: 0.5,
           duration: 2,
           opacity: 1,
           x: 0,
