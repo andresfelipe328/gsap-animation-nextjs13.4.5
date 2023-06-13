@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 
 const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
   const root = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // gsap.from(root.current!.childNodes, {
       //   opacity: 0,
@@ -32,7 +32,7 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
       );
 
       return () => ctx.revert();
-    });
+    }, root);
   }, []);
 
   return (
