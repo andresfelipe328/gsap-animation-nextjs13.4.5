@@ -16,23 +16,23 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
       //   ease: "elastic.out(2, 0.5)",
       // });
 
-      window.addEventListener("load", function (e: any) {
-        gsap.fromTo(
-          root.current!.childNodes,
-          {
-            opacity: 0,
-            x: -10,
-          },
-          {
-            delay: 0.5,
-            duration: 2,
-            opacity: 1,
-            x: 0,
-            stagger: 0.2,
-            ease: "elastic.out(2, 0.5)",
-          }
-        );
-      });
+      gsap.fromTo(
+        root.current!.childNodes,
+        {
+          opacity: 0,
+          x: -10,
+          visibility: "hidden",
+        },
+        {
+          autoAlpha: 1,
+          delay: 0.5,
+          duration: 2,
+          opacity: 1,
+          x: 0,
+          stagger: 0.2,
+          ease: "elastic.out(2, 0.5)",
+        }
+      );
 
       return () => ctx.revert();
     }, root);
