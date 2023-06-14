@@ -1,3 +1,5 @@
+"use client";
+
 import BasicAnimationLayout from "@/components/BasicAnimationLayout";
 import "./globals.css";
 import { Inter } from "next/font/google";
