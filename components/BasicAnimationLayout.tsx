@@ -16,21 +16,34 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
       //   ease: "elastic.out(2, 0.5)",
       // });
 
+      // gsap.from(
+      //   root.current!.childNodes,
+      //   // {
+      //   //   opacity: 0,
+      //   //   x: -10,
+      //   // },
+      //   {
+      //     autoAlpha: 0,
+      //     delay: 0.5,
+      //     duration: 2,
+      //     opacity: 1,
+      //     x: 0,
+      //     stagger: 0.2,
+      //     ease: "elastic.out(2, 0.5)",
+      //   }
+      // );
+      gsap.from(root.current, { opacity: 1, duration: 0.5, autoAlpha: 0 });
+
       gsap.fromTo(
         root.current!.childNodes,
+        { opacity: 0, y: 5 },
         {
-          opacity: 0,
-          x: -10,
-          visibility: "hidden",
-        },
-        {
-          autoAlpha: 1,
-          delay: 0.5,
-          duration: 2,
+          duration: 0.25,
+          y: 0,
           opacity: 1,
-          x: 0,
           stagger: 0.2,
-          ease: "elastic.out(2, 0.5)",
+          delay: 0.05,
+          ease: "power1.out",
         }
       );
 
@@ -39,8 +52,10 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <main className={`flex min-h-screen gap-2 bg-main-bg p-2`} ref={root}>
-      {children}
+    <main className={`h-screen bg-main-bg p-2`}>
+      <div className="flex gap-2 h-full invisible" ref={root}>
+        {children}
+      </div>
     </main>
   );
 };
