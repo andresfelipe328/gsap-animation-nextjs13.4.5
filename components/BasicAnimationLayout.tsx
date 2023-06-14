@@ -36,7 +36,10 @@ const BasicAnimationLayout = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <main className={`flex min-h-screen gap-2 bg-main-bg p-2`} ref={root}>
+    <main
+      className={`flex min-h-screen gap-2 bg-main-bg p-2 fallback`}
+      ref={root}
+    >
       {children}
     </main>
   );

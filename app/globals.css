@@ -59,3 +59,15 @@
     @apply w-1 h-1;
   }
 }
+
+@layer components {
+  .noJS {
+    animation: fade-in-fallback 0.1s 2s forwards ease;
+  }
+
+  @keyframes fade-in-fallback {
+    to {
+      opacity: 1;
+    }
+  }
+}
