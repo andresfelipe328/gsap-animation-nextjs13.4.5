@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-sub-bg/90;
+    @apply bg-main-bg overflow-hidden;
   }
 
   h1,
@@ -61,7 +61,7 @@
 }
 
 @layer components {
-  .noJS {
+  .noJS .root {
     animation: fade-in-fallback 0.1s 2s forwards ease;
   }
 
